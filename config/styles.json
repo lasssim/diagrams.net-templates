@@ -1,8 +1,4 @@
 {
-  "defaultLibraries": "https%3A%2F%2Flisuna.org%2Flasssim_docs%2FLasssim%2520Architecture%2520Primitives%2520v2.xml;general;basic;arrows2",
-  "defaultCustomLibraries": [
-    "https%3A%2F%2Flisuna.org%2Flasssim_docs%2FLasssim%2520Architecture%2520Primitives%2520v2.xml"
-  ],
   "customColorSchemes": [
     [
       {

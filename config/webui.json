@@ -1,0 +1,3 @@
+{
+  "css": "body > div.geMenubarContainer { background-image: URL(https://www.lasssim.com/wp-content/uploads/2022/11/lass-Logo-4c-architecture-primitives-styles-by.svg?); background-size: contain; background-repeat: no-repeat; background-position: calc(100% - 140px) center; } body > div.geMenubarContainer > div.geMenubar { background-color: none !important; } "
+}
