@@ -22,10 +22,6 @@ function diagram_button (target_id, config_template_urls, custom_lib_urls) {
     deflated = String.fromCharCode.apply(null, new Uint8Array(pako.deflateRaw(url_encoded)));
     base64 = btoa(deflated);
 
-    //let btn = document.createElement("button");
-    //btn.innerHTML = "Open Diagrams.net with Lasssim Styles";
-    //btn.classList.add("btn");
-    //btn.classList.add("btn-primary");
     btn = document.getElementById(target_id);
     btn.onclick = function () {
       clibs = custom_lib_urls.map(function(element) { return "U".concat(element); }).join(";");
