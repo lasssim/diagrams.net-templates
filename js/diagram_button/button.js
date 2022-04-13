@@ -27,7 +27,7 @@ function diagram_button ({target_id, on_click, open_url, config_template_urls, c
 
       
       if(open_url) {
-        open_param = "&open=U${open_url}";
+        open_param = `&open=U${open_url}`;
       } else {
         open_param = "";
       }
