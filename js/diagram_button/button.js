@@ -1,4 +1,4 @@
-function diagram_button (target_id, on_click, config_template_urls, custom_lib_urls) {
+function diagram_button ({target_id, on_click, open_url, config_template_urls, custom_lib_urls}={}) {
 
   config_template_urls = (typeof config_template_urls !== 'undefined') ? config_template_urls : [
     "https://raw.githubusercontent.com/lasssim/diagrams.net-templates/main/config/styles.json",
@@ -9,7 +9,6 @@ function diagram_button (target_id, on_click, config_template_urls, custom_lib_u
     "https://raw.githubusercontent.com/lasssim/diagrams.net-templates/main/lib/Lasssim%20Primitives.xml",
     "https://raw.githubusercontent.com/lasssim/diagrams.net-templates/main/lib/Lasssim%20Arrangements.xml"
   ];
-
 
   config_requests = config_template_urls.map((url) => $.getJSON(url));
 
@@ -26,7 +25,14 @@ function diagram_button (target_id, on_click, config_template_urls, custom_lib_u
     btn.onclick = function () {
       clibs = custom_lib_urls.map(function(element) { return "U".concat(element); }).join(";");
 
-      url = `https://app.diagrams.net/?splash=0&libs=general;basic;arrows2&clibs=${clibs}#_CONFIG_${base64}`;
+      
+      if(open_url) {
+        open_param = "&open=U${open_url}";
+      } else {
+        open_param = "";
+      }
+
+      url = `https://app.diagrams.net/?splash=0&libs=general;basic;arrows2&clibs=${clibs}${open_param}#_CONFIG_${base64}`;
       console.log(url);
 
       encoded_url = url;

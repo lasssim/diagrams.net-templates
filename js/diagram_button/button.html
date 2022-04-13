@@ -10,7 +10,10 @@
 </head>
 <body>
   <script>
-    diagram_button("diagram_button", 
+    diagram_button({
+        target_id: "diagram_button", 
+        open_url: "https://github.com/lasssim/diagrams.net-templates/raw/main/lib/system.drawio.png"
+      },
       function() {
         alert("Hello!");
       }
