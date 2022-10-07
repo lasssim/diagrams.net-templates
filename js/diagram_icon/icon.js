@@ -1,6 +1,6 @@
 function enable_automatic_drawio_edit_icon(on_click) {
   $(document).ready(function() {
-    $("img[src*='drawio']").each(function() {
+    $("img[src*='.drawio.png'], img[src*='.drawio.svg'").each(function() {
       var src = $(this).attr("src");
 
       $(this).wrap('<div class="diagram_icon_wrapper"></div>');
