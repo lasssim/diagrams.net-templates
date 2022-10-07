@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Diagrams Button</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/1.0.6/pako.min.js"></script>
   <script src="button.js"></script>
@@ -10,17 +13,31 @@
 </head>
 <body>
   <script>
-    diagram_button({
-        target_id: "diagram_button", 
-        open_url: "https://github.com/lasssim/diagrams.net-templates/raw/main/lib/system.drawio.png"
-      },
-      function() {
-        alert("Hello!");
-      }
-    );
+    // on document ready
+    $(document).ready(function() {
+
+
+      diagram_button({
+          target_id: "diagram_button", 
+          open_url: "https://github.com/lasssim/diagrams.net-templates/raw/main/lib/system.drawio.png"
+        },
+        function() {
+          alert("Hello!");
+        }
+      );
+      diagram_button({
+          target_id: $("#diagram_button_2"), 
+          open_url: "https://github.com/lasssim/diagrams.net-templates/raw/main/lib/system.drawio.png"
+        },
+        function() {
+          alert("Hello!");
+        }
+      );
+    });
   </script>
 
   <a id="diagram_button" class="btn btn-primary" href="">Open Diagrams.net Editor with Lasssim Styles</a>
+  <a id="diagram_button_2" class="btn btn-primary" href="">Open Diagrams.net Editor with Lasssim Styles</a>
  
 </body>
 </html>

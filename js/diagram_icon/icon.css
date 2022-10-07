@@ -1,0 +1,24 @@
+.diagram_icon_wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.diagram_icon_wrapper img {
+  display: block;
+}
+
+.diagram_icon_wrapper a.diagram_icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Diagrams.net_Logo.svg/32px-Diagrams.net_Logo.svg.png) no-repeat;
+  overflow: hidden;
+  opacity: 0.5;
+}
+
+
+.diagram_icon_wrapper a.diagram_icon:hover {
+  opacity: 1;
+}

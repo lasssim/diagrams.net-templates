@@ -1,3 +1,6 @@
+// on dom ready select all img tags with "drawio"
+
+
 function diagram_button ({target_id, on_click, open_url, config_template_urls, custom_lib_urls}={}) {
 
   config_template_urls = (typeof config_template_urls !== 'undefined') ? config_template_urls : [
@@ -21,8 +24,15 @@ function diagram_button ({target_id, on_click, open_url, config_template_urls, c
     deflated = String.fromCharCode.apply(null, new Uint8Array(pako.deflateRaw(url_encoded)));
     base64 = btoa(deflated);
 
-    btn = document.getElementById(target_id);
-    btn.onclick = function () {
+    // if target_id is a string then it is an id of an element to be used as a
+    // button otherwise it is an element itself
+    if (typeof target_id === 'string') {
+      btn = $(`#${target_id}`);
+    } else {
+      btn = target_id;
+    }
+
+    btn.click(function () {
       clibs = custom_lib_urls.map(function(element) { return "U".concat(element); }).join(";");
 
       
@@ -40,7 +50,7 @@ function diagram_button ({target_id, on_click, open_url, config_template_urls, c
       window.open(encoded_url, '_blank');
 
       if (on_click) { on_click(); }
-    };
+    });
 
 
   });
