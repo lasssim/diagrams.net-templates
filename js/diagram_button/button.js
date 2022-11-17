@@ -32,7 +32,8 @@ function diagram_button ({target_id, on_click, open_url, config_template_urls, c
       btn = target_id;
     }
 
-    btn.click(function () {
+    btn.click(function (e) {
+      e.preventDefault();
       clibs = custom_lib_urls.map(function(element) { return "U".concat(element); }).join(";");
 
       
